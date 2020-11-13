@@ -20,11 +20,14 @@
     font-style: italic;
   }
 
+  &__main-video {
+    position: relative;
+  }
+
   &__secondary-videos {
     background-color: black;
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-    overflow-x: auto;
+    display: grid;
+    grid-template-rows: 200px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }

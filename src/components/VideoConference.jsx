@@ -23,9 +23,6 @@ export default function VideoConference() {
         <div className="stream">
           <img alt="user video" src={maleVideo} />
         </div>
-        <div className="stream">
-          <img alt="user video" src={femaleVideo} />
-        </div>
       </div>
     </div>
   );

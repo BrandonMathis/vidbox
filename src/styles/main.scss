@@ -1,0 +1,28 @@
+@import "bootstrap-theme";
+
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+@import "colors";
+@import "reset";
+
+@import "components/app";
+@import "components/button";
+@import "components/controls";
+@import "components/stream";
+@import "components/vconf";
+
+.swatches {
+  padding: 1em;
+}
+
+@each $color, $value in $theme-colors {
+  .swatch-#{$color} {
+    background-color: $value;
+    color: color-yiq($value);
+    box-shadow: 5px 5px 20px -12px black;
+  }
+}

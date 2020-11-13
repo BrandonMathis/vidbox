@@ -1,0 +1,30 @@
+.stream {
+  padding: 0.5em;
+
+  .vconf__main-video & {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      border: 3px solid white;
+      border-radius: 3px;
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .vconf__secondary-videos & {
+    width: 300px;
+    flex: 0 0 auto;
+
+    img {
+      border: 3px solid white;
+      border-radius: 3px;
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+}

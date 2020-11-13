@@ -1,0 +1,17 @@
+.controls {
+  display: flex;
+  justify-content: space-between;
+  background-color: $black;
+  padding: 1em;
+  color: white;
+
+  &__cell {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    > *:not(:last-child) {
+      margin-right: 0.5em;
+    }
+  }
+}

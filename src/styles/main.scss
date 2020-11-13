@@ -23,6 +23,21 @@
   .swatch-#{$color} {
     background-color: $value;
     color: color-yiq($value);
-    box-shadow: 5px 5px 20px -12px black;
   }
+}
+
+@keyframes pulse-shadow {
+  from {
+    box-shadow: 0px 0px 20px -5px theme-color("danger");
+  }
+  to {
+    box-shadow: 0px 0px 20px 5px theme-color("danger");
+  }
+}
+
+.pulse {
+  animation: pulse-shadow 1s infinite;
+  animation-delay: 0s;
+  animation-timing-function: ease-out;
+  animation-direction: alternate;
 }

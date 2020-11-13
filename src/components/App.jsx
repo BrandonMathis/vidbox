@@ -12,16 +12,10 @@ const App = () => {
     <main>
       <div className="app">
         <Controls raiseHand={raiseHand} />
-        <div
-          className="app__body"
-          style={{
-            boxShadow: handRaised && `yellow 0em 0em 3px 3px inset`,
-          }}
-        >
-          {/* <div style={{ backgroundColor: "salmon", height: "100%" }}></div> */}
+        <div className="app__body">
           <Switch>
             <Route path="/">
-              <VideoConference />
+              <VideoConference handRaised={handRaised} />
             </Route>
             <Route path="/components">
               <UIComponents />

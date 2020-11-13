@@ -7,6 +7,7 @@ import {
   DropdownMenu,
   DropdownItem,
   UncontrolledDropdown,
+  ButtonDropdown,
 } from "reactstrap";
 
 const propTypes = {
@@ -17,13 +18,66 @@ const Controls = ({ raiseHand }) => {
   const [currentCamera, setCurrentCamera] = useState(1);
   const [currentMic, setCurrentMic] = useState(1);
   const [isRecording, setIsRecording] = useState(false);
+  const [moreDropdownOpen, setMoreOpen] = useState(false);
 
   return (
     <div className="controls">
       <div className="controls__cell">
         <Button color="danger">
-          <i class="fas fa-sign-out-alt fa-flip-horizontal"></i> Leave
+          <i className="fas fa-sign-out-alt fa-flip-horizontal"></i>
         </Button>
+
+        <ButtonGroup>
+          <Button outline color="light">
+            <i className="fas fa-microphone-alt"></i>
+          </Button>
+          <Button outline color="light">
+            <i className="fas fa-desktop"></i>
+          </Button>
+          <Button outline color="light">
+            <i className="fas fa-video"></i>
+          </Button>
+          <ButtonDropdown
+            isOpen={moreDropdownOpen}
+            toggle={() => setMoreOpen(!moreDropdownOpen)}
+          >
+            <DropdownToggle color="light" outline caret>
+              <i className="fas fa-ellipsis-v"></i>
+            </DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem header>Select Device</DropdownItem>
+              <DropdownItem onClick={() => setCurrentCamera(1)}>
+                <span style={{ visibility: currentCamera !== 1 && "hidden" }}>
+                  ✓
+                </span>{" "}
+                <i className="fas fa-video"></i> Front Camera
+              </DropdownItem>
+              <DropdownItem onClick={() => setCurrentCamera(2)}>
+                <span style={{ visibility: currentCamera !== 2 && "hidden" }}>
+                  ✓
+                </span>{" "}
+                <i className="fas fa-video"></i> Back Camera
+              </DropdownItem>
+              <DropdownItem onClick={() => setCurrentMic(1)}>
+                <span style={{ visibility: currentMic !== 1 && "hidden" }}>
+                  ✓
+                </span>{" "}
+                <i className="fas fa-microphone-alt"></i> Built-in Microphone
+              </DropdownItem>
+              <DropdownItem onClick={() => setCurrentMic(2)}>
+                <span style={{ visibility: currentMic !== 2 && "hidden" }}>
+                  ✓
+                </span>{" "}
+                <i className="fas fa-microphone-alt"></i> Air Pods
+              </DropdownItem>
+              <DropdownItem header>Other Actions</DropdownItem>
+              <DropdownItem>Action 1</DropdownItem>
+              <DropdownItem>Action 2</DropdownItem>
+              <DropdownItem>Action 3</DropdownItem>
+            </DropdownMenu>
+          </ButtonDropdown>
+        </ButtonGroup>
+
         <Button
           color="warning"
           onClick={() => {
@@ -31,77 +85,40 @@ const Controls = ({ raiseHand }) => {
 
             setTimeout(() => {
               raiseHand(false);
-            }, 2000);
+            }, 5000);
           }}
         >
           <i className="far fa-hand-paper"></i>
         </Button>
       </div>
+
       <div className="controls__cell">
         <Button
-          color="white"
+          color={isRecording ? "danger" : "white"}
+          className={isRecording ? "pulse recording" : null}
           onClick={() => setIsRecording(!isRecording)}
-          style={{
-            backgroundColor: isRecording && "crimson",
-            color: isRecording && "white",
-            transition: "color",
-          }}
         >
           <i
             className="fas fa-circle"
             style={{ color: isRecording ? "white" : "crimson" }}
           ></i>{" "}
-          Start Recording
+          {isRecording ? "ON" : "OFF"} The Record
         </Button>
 
         <UncontrolledDropdown>
           <DropdownToggle color="dark" caret>
-            <i class="fas fa-door-open"></i> Enter Sidebar
+            <i className="fas fa-door-open"></i> SIDEBAR
           </DropdownToggle>
           <DropdownMenu right>
-            <DropdownItem header>Enter Sidebar 1</DropdownItem>
-            <DropdownItem header>Enter Sidebar 2</DropdownItem>
-            <DropdownItem header>Enter Sidebar 3</DropdownItem>
+            <DropdownItem>Enter Sidebar 1</DropdownItem>
+            <DropdownItem>Enter Sidebar 2</DropdownItem>
+            <DropdownItem>Enter Sidebar 3</DropdownItem>
           </DropdownMenu>
         </UncontrolledDropdown>
-        <UncontrolledDropdown>
-          <DropdownToggle color="info" caret>
-            Select Device
-          </DropdownToggle>
-          <DropdownMenu right>
-            <DropdownItem header>Camera</DropdownItem>
-            <DropdownItem onClick={() => setCurrentCamera(1)}>
-              <span style={{ visibility: currentCamera !== 1 && "hidden" }}>
-                ✓
-              </span>{" "}
-              <i class="fas fa-video"></i> Front Camera
-            </DropdownItem>
-            <DropdownItem onClick={() => setCurrentCamera(2)}>
-              <span style={{ visibility: currentCamera !== 2 && "hidden" }}>
-                ✓
-              </span>{" "}
-              <i class="fas fa-video"></i> Back Camera
-            </DropdownItem>
-            <DropdownItem header>Microphone</DropdownItem>
-            <DropdownItem onClick={() => setCurrentMic(1)}>
-              <span style={{ visibility: currentMic !== 1 && "hidden" }}>
-                ✓
-              </span>{" "}
-              <i class="fas fa-microphone-alt"></i> Built-in Microphone
-            </DropdownItem>
-            <DropdownItem onClick={() => setCurrentMic(2)}>
-              <span style={{ visibility: currentMic !== 2 && "hidden" }}>
-                ✓
-              </span>{" "}
-              <i class="fas fa-microphone-alt"></i> Air Pods
-            </DropdownItem>
-          </DropdownMenu>
-        </UncontrolledDropdown>
-        <div>
-          <Button color="danger">
-            End Deposition <i className="fas fa-times"></i>
-          </Button>
-        </div>
+
+        <Button color="danger">
+          End Deposition <i className="fas fa-times"></i>
+        </Button>
       </div>
     </div>
   );

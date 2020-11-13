@@ -5,27 +5,12 @@
   display: grid;
   grid-template-rows: 1fr 200px;
 
-  &__status-bar {
-    width: 100%;
-    margin-bottom: $spacer * 0.25 0;
-    height: 2em;
-    padding: 0.15em;
-    background-color: theme-color("secondary");
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.75em;
-    line-height: 1;
-    color: theme-color("light");
-    font-style: italic;
-  }
-
   &__main-video {
     position: relative;
   }
 
   &__secondary-videos {
-    background-color: black;
+    background-color: theme-color("black");
     display: grid;
     grid-template-rows: 200px;
     grid-template-columns: 1fr 1fr 1fr 1fr;

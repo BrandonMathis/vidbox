@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/vidbox/static/css/main.54c43556.chunk.css",
+    "main.js": "/vidbox/static/js/main.d731dca3.chunk.js",
+    "main.js.map": "/vidbox/static/js/main.d731dca3.chunk.js.map",
+    "runtime-main.js": "/vidbox/static/js/runtime-main.d8014fc1.js",
+    "runtime-main.js.map": "/vidbox/static/js/runtime-main.d8014fc1.js.map",
+    "static/js/2.f194e829.chunk.js": "/vidbox/static/js/2.f194e829.chunk.js",
+    "static/js/2.f194e829.chunk.js.map": "/vidbox/static/js/2.f194e829.chunk.js.map",
+    "static/js/3.05af8f44.chunk.js": "/vidbox/static/js/3.05af8f44.chunk.js",
+    "static/js/3.05af8f44.chunk.js.map": "/vidbox/static/js/3.05af8f44.chunk.js.map",
+    "index.html": "/vidbox/index.html",
+    "static/css/main.54c43556.chunk.css.map": "/vidbox/static/css/main.54c43556.chunk.css.map",
+    "static/js/2.f194e829.chunk.js.LICENSE.txt": "/vidbox/static/js/2.f194e829.chunk.js.LICENSE.txt",
+    "static/media/female-video.8c91e879.svg": "/vidbox/static/media/female-video.8c91e879.svg",
+    "static/media/male-video.2e5f936f.svg": "/vidbox/static/media/male-video.2e5f936f.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d8014fc1.js",
+    "static/js/2.f194e829.chunk.js",
+    "static/css/main.54c43556.chunk.css",
+    "static/js/main.d731dca3.chunk.js"
+  ]
+}

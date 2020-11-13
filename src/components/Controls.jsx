@@ -14,10 +14,9 @@ const propTypes = {
   raiseHand: PropTypes.func.isRequired,
 };
 
-const Controls = ({ raiseHand }) => {
+const Controls = ({ raiseHand, setIsRecording, isRecording }) => {
   const [currentCamera, setCurrentCamera] = useState(1);
   const [currentMic, setCurrentMic] = useState(1);
-  const [isRecording, setIsRecording] = useState(false);
   const [moreDropdownOpen, setMoreOpen] = useState(false);
 
   return (
